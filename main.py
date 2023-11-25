@@ -35,18 +35,32 @@ while opcion != 4:
                 print("1. Pregunta numérica")
                 print("2. Capitales")
                 print("3. Pregunta de texto")
-                eleccion = 0
-                eleccion = int(input("Elige una categoría:"))
-                while eleccion != 0:
-                    if eleccion == 1:
-                        time.sleep(0.5)
-                        pregunta = libreria.preguntaNumerica()
-                        print("Resuelve: ",pregunta)
-                        time.sleep(0.5)
-                        respuesta = input("Solución: ")
-                        if respuesta == eval(pregunta):
-                            print("Correcto!")
-                            participantes[jugador] += 1
-                        else:
-                            print("Respuesta errónea")
+                eleccion = int(input("Elige una categoría: "))
+                    
+                if eleccion == 1:
+                    time.sleep(0.5)
+                    pregunta = libreria.preguntaNumerica()
+                    print("Resuelve: ",pregunta)
+                    time.sleep(0.5)
+                    respuesta = int(input("Solución: "))
+                    if respuesta == eval(pregunta):
+                        print("Correcto!")
+                        participantes[jugador] += 1
+                    else:
+                        print("Respuesta errónea")
+                            
+                elif eleccion == 2:
+                    time.sleep(0.5)
+                    pregunta = libreria.preguntaCapital()
+                    print("¿Cuál es la capital de",pregunta,"?")
+                    respuesta = input("Solución:")
+                    if respuesta.lower() == libreria.capitales[pregunta].lower():
+                        print("Respuesta correcta!")
+                        participantes[jugador] += 1
+                    else:
+                        print("Respuesta incorrecta")
+                            
+                elif eleccion ==3:
+                    pass
+                        
                 
