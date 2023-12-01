@@ -21,4 +21,4 @@ def preguntaTexto():
         palabra2[random.randint(0,len(palabra)-1)] = "*"
     for letra in palabra2:
         cadena+=letra
-    return cadena
+    return cadena, palabra
