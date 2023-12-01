@@ -61,6 +61,8 @@ while opcion != 4:
                         print("Respuesta incorrecta")
                             
                 elif eleccion ==3:
-                    pass
+                    palabra = libreria.preguntaTexto()
+                    print(palabra)
+                    time.sleep(0.5)
+                    respuesta = input("Resuelve la palabra: ")
                         
-                

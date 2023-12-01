@@ -14,5 +14,11 @@ def preguntaCapital():
 
 def preguntaTexto():
     palabra = random.choice(palabras)
-    
-            
+    cadena = ""
+    numHuecos = len(palabra) // 3
+    palabra2 = list(palabra)
+    for i in range(numHuecos):
+        palabra2[random.randint(0,len(palabra)-1)] = "*"
+    for letra in palabra2:
+        cadena+=letra
+    return cadena
