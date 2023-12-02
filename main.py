@@ -65,6 +65,7 @@ while opcion != 4:
                     print(palabra)
                     time.sleep(0.5)
                     respuesta = input("Resuelve la palabra: ")
+                    time.sleep(0.5)
                     if respuesta == solucion:
                         print("Correcto!")
                     else:
