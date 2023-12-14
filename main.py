@@ -16,9 +16,13 @@ while opcion != 4:
     opcion = input("Introduce la opción: ")
     
     if opcion == "1":
-        jugadores = int(input("Introduce el número de jugadores: "))
+        jugadores = int(input("Introduce el número de jugadores (máximo 4): "))
+        while jugadores >= 5:
+            jugadores = int(input("Máximo 4 jugadores: "))
         for i in range(1, jugadores+1):
             nombre = input("Introduce el nombre del jugador "+str(i)+": ")
+            while nombre in participantes:
+                nombre = input("Ese nombre ya existe, por favor introduce uno diferente: ")
             participantes[nombre] = 0
         
     elif opcion == "2":
@@ -55,7 +59,7 @@ while opcion != 4:
                     print("¿Cuál es la capital de",pregunta,"?")
                     respuesta = input("Solución:")
                     if respuesta.lower() == libreria.capitales[pregunta].lower():
-                        print("Respuesta correcta!")
+                        print("¡Respuesta correcta!")
                         participantes[jugador] += 1
                     else:
                         print("Respuesta incorrecta")
@@ -67,8 +71,12 @@ while opcion != 4:
                     respuesta = input("Resuelve la palabra: ")
                     time.sleep(0.5)
                     if respuesta == solucion:
-                        print("Correcto!")
+                        print("¡Correcto!")
                     else:
                         print("Respuesta incorrecta")
+    
+    else :
+        print("¡Hasta la próxima!")
+        break
                     
                         
