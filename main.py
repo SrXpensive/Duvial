@@ -5,7 +5,7 @@ print("BIENVENIDO A DUVIAL")
 print("-------------------")
 opcion = "w"
 participantes = {}
-while opcion != 4:
+while opcion != "4":
     print("MENU")
     print("----------")
     print("1. Elegir número de jugadores")
@@ -74,9 +74,4 @@ while opcion != 4:
                         print("¡Correcto!")
                     else:
                         print("Respuesta incorrecta")
-    
-    else :
-        print("¡Hasta la próxima!")
-        break
-                    
-                        
+                 
