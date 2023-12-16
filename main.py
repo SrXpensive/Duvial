@@ -1,5 +1,6 @@
 import time
 import libreria
+import random
 
 print("BIENVENIDO A DUVIAL")
 print("-------------------")
@@ -31,9 +32,11 @@ while opcion != "4":
     elif opcion =="3":
         print("COMIENZA EL JUEGO")
         print("-----------------")
+        players = list(participantes.keys())
+        random.shuffle(players)
         for i in range(len(participantes)):
             time.sleep(0.5)
-            for jugador in participantes:
+            for jugador in players:
                 print(jugador,"es tu turno")
                 time.sleep(0.5)
                 print("1. Pregunta numérica")
