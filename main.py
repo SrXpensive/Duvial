@@ -16,9 +16,11 @@ while opcion != "4":
     print("----------")
     time.sleep(0.5)
     opcion = input("Introduce la opción: ")
+    print("----------")
     
     if opcion == "1":
         jugadores = int(input("Introduce el número de jugadores (máximo 4): "))
+        print("------------------------------------------")
         while jugadores >= 5:
             jugadores = int(input("Máximo 4 jugadores: "))
         for i in range(1, jugadores+1):
@@ -26,6 +28,7 @@ while opcion != "4":
             while nombre in participantes:
                 nombre = input("Ese nombre ya existe, por favor introduce uno diferente: ")
             participantes[nombre] = 0
+        print("------------------------------------------")        
 
     elif opcion == "2":
         pass
@@ -36,16 +39,19 @@ while opcion != "4":
         players = list(participantes.keys())
         random.shuffle(players)
         rondas = int(input("¿Cuantas rondas queréis jugar?: "))
+        print("------------------------")
         for i in range(1,rondas+1):
             time.sleep(0.5)
             for jugador in players:
                 print("Ronda ",i)
+                print("----------")
                 print(jugador,"es tu turno")
                 time.sleep(0.5)
                 print("1. Pregunta numérica")
                 print("2. Capitales")
                 print("3. Pregunta de texto")
                 eleccion = int(input("Elige una categoría: "))
+                print("------------------")
                     
                 if eleccion == 1:
                     time.sleep(0.5)
@@ -88,7 +94,4 @@ while opcion != "4":
             print(jugador,"ha obtenido un total de", participantes[jugador],"puntos")
         claves = list(participantes.keys())
         valores = list(participantes.values())
-        print("El ganador es",claves[max(valores)],"con un total de",max(valores),"puntos")
-
-
-                 
+        print("El ganador es",claves[max(valores).index()],"con un total de",max(valores),"puntos")    
