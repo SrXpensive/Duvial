@@ -73,9 +73,10 @@ while opcion != "4":
                     if respuesta.lower() == libreria.capitales[pregunta].lower():
                         print("¡Respuesta correcta!")
                         participantes[jugador] += 1
-                        print(participantes)
+                        print("----------")
                     else:
                         print("Respuesta incorrecta")
+                        print("----------")
                             
                 elif eleccion ==3:
                     palabra,solucion = libreria.preguntaTexto()
