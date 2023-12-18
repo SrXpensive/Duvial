@@ -95,4 +95,4 @@ while opcion != "4":
             print(jugador,"ha obtenido un total de", participantes[jugador],"puntos")
         claves = list(participantes.keys())
         valores = list(participantes.values())
-        print("El ganador es",claves[max(valores).index()],"con un total de",max(valores),"puntos")    
+        print("El ganador es",claves[valores.index(max(valores))],"con un total de",max(valores),"puntos")    
