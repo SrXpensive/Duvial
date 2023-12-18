@@ -13,6 +13,7 @@ while opcion != "4":
     print("2. Elegir dificultad")
     print("3. Empezar el juego")
     print("4. Salir del programa")
+    print("----------")
     time.sleep(0.5)
     opcion = input("Introduce la opción: ")
     
@@ -25,7 +26,7 @@ while opcion != "4":
             while nombre in participantes:
                 nombre = input("Ese nombre ya existe, por favor introduce uno diferente: ")
             participantes[nombre] = 0
-        
+
     elif opcion == "2":
         pass
     
@@ -34,9 +35,11 @@ while opcion != "4":
         print("-----------------")
         players = list(participantes.keys())
         random.shuffle(players)
-        for i in range(len(participantes)):
+        rondas = int(input("¿Cuantas rondas queréis jugar?: "))
+        for i in range(1,rondas+1):
             time.sleep(0.5)
             for jugador in players:
+                print("Ronda ",i)
                 print(jugador,"es tu turno")
                 time.sleep(0.5)
                 print("1. Pregunta numérica")
@@ -64,6 +67,7 @@ while opcion != "4":
                     if respuesta.lower() == libreria.capitales[pregunta].lower():
                         print("¡Respuesta correcta!")
                         participantes[jugador] += 1
+                        print(participantes)
                     else:
                         print("Respuesta incorrecta")
                             
@@ -77,4 +81,14 @@ while opcion != "4":
                         print("¡Correcto!")
                     else:
                         print("Respuesta incorrecta")
+
+        print("RESULTADO DE LA PARTIDA:")
+        print("------------------------")
+        for jugador in participantes:
+            print(jugador,"ha obtenido un total de", participantes[jugador],"puntos")
+        claves = list(participantes.keys())
+        valores = list(participantes.values())
+        print("El ganador es",claves[max(valores)],"con un total de",max(valores),"puntos")
+
+
                  
