@@ -17,8 +17,13 @@ def preguntaTexto():
     cadena = ""
     numHuecos = len(palabra) // 3
     palabra2 = list(palabra)
+    posiciones = []
     for i in range(numHuecos):
-        palabra2[random.randint(0,len(palabra)-1)] = "*"
+        numero = random.randint(0,len(palabra)-1)
+        posiciones.append(numero)
+        while numero in posiciones:
+            numero = random.randint(0,len(palabra)-1)
+        palabra2[numero] = "*"
     for letra in palabra2:
         cadena+=letra
     return cadena, palabra
