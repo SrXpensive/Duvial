@@ -4,6 +4,7 @@ import random
 
 print("BIENVENIDO A DUVIAL")
 print("-------------------")
+flag = False
 opcion = "w"
 participantes = {}
 while opcion != "4":
@@ -19,6 +20,12 @@ while opcion != "4":
     print("----------")
     
     if opcion == "1":
+        if flag == True:
+            print("Ya has introducido los jugadores")
+            print("------------------------------")
+            time.sleep(0.5)
+            continue
+        flag = True
         jugadores = int(input("Introduce el número de jugadores (máximo 4): "))
         print("------------------------------------------")
         while jugadores >= 5:
