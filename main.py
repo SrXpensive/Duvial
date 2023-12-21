@@ -160,7 +160,7 @@ while True:
                     claves = list(participantes.keys())
                     valores = list(participantes.values())
                     print("El ganador es",claves[valores.index(max(valores))],"con un total de",max(valores),"puntos")
-                    continue
+                    break
                 else:
                     print("Lo has hecho muy bien",jugador,",has obtenido un total de",participantes[jugador],"puntos")
                     print("------------------------")
