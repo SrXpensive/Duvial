@@ -37,8 +37,8 @@ while True:
                 checkplayers = True
                 jugadores = int(input("Introduce el número de jugadores (máximo 4): "))
                 print("------------------------------------------")
-                while jugadores >= 5:
-                    jugadores = int(input("Máximo 4 jugadores: "))
+                while jugadores >= 5 or jugadores <= 0:
+                    jugadores = int(input("Máximo 4 jugadores(y un número positivo): "))
                 for i in range(1, jugadores+1):
                     nombre = input("Introduce el nombre del jugador "+str(i)+": ")
                     while nombre in participantes:
